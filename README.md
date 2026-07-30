@@ -1,8 +1,4 @@
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/M1hairu/M1hairu/main/.assets/header-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/M1hairu/M1hairu/main/.assets/header-light.svg">
-  <img alt="M1X — code meets movement, profile as transmission" src="https://raw.githubusercontent.com/M1hairu/M1hairu/main/.assets/header-dark.svg" width="100%">
-</picture>
+<img alt="M1X — a Schwarzschild black hole, photon geodesics integrated per pixel" src="https://raw.githubusercontent.com/M1hairu/M1hairu/main/.assets/header.gif" width="100%">
 
 ```console
 $ boot --profile M1HAIRU
