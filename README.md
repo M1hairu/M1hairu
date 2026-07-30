@@ -1,19 +1,16 @@
-```
-███╗   ███╗  ██╗ ██╗  ██╗
-████╗ ████║ ███║ ╚██╗██╔╝
-██╔████╔██║ ╚██║  ╚███╔╝
-██║╚██╔╝██║  ██║  ██╔██╗
-██║ ╚═╝ ██║  ██║ ██╔╝ ██╗
-╚═╝     ╚═╝  ╚═╝ ╚═╝  ╚═╝
-```
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/M1hairu/M1hairu/main/.assets/header-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/M1hairu/M1hairu/main/.assets/header-light.svg">
+  <img alt="M1X — code meets movement, profile as transmission" src="https://raw.githubusercontent.com/M1hairu/M1hairu/main/.assets/header-dark.svg" width="100%">
+</picture>
 
-> CODE MEETS MOVEMENT · PROFILE AS TRANSMISSION
+```console
+$ boot --profile M1HAIRU
 
-```
-OPERATOR   M1HAIRU / M1X
-FIELD      SYSTEMS · SIGNAL · VISUAL_INTERFACES
-BASE       INFORMATION_SECURITY / BSC
-STATE      TRANSMITTING
+  [ok]  operator ....... M1HAIRU / M1X
+  [ok]  field .......... SYSTEMS · SIGNAL · VISUAL_INTERFACES
+  [ok]  base ........... INFORMATION_SECURITY / BSC
+  [··]  state .......... TRANSMITTING
 ```
 
 I build things that sit close to the metal and still have to look like something —
@@ -80,24 +77,28 @@ generated art pipeline, i18n, original soundtrack.
 
 ---
 
-### `~/ cat ./stack`
+### `~/ tree ./stack`
 
 ```
-LOW      C · LINUX_KERNEL · V4L2 · DKMS · ACPI · EMBEDDED
-CORE     PYTHON · TYPESCRIPT · JAVASCRIPT · SQL
-SURFACE  NEXT.JS · REACT · TAILWIND · WEBGL · CANVAS · FRAMER_MOTION
-FIELD    RTL-SDR · ARDUINO · RASPBERRY_PI · 3D_PRINTING · BLENDER
-HOST     ARCH · HYPRLAND · NGINX · SYSTEMD · DOCKER
+.
+├── LOW ········ C · LINUX_KERNEL · V4L2 · DKMS · ACPI · EMBEDDED
+├── CORE ······· PYTHON · TYPESCRIPT · JAVASCRIPT · SQL
+├── SURFACE ···· NEXT.JS · REACT · TAILWIND · WEBGL · CANVAS · FRAMER_MOTION
+├── FIELD ······ RTL-SDR · ARDUINO · RASPBERRY_PI · 3D_PRINTING · BLENDER
+└── HOST ······· ARCH · HYPRLAND · NGINX · SYSTEMD · DOCKER
 ```
 
 ### `~/ cat ./record`
 
 ```
-FINALIST   National Technology Olympiad — Wireless Communication Technologies
-PRIZE      Bolshie Vyzovy (Sirius)
-PRIZE      HSE University Case Championship
-1ST        MPIT — regional stage
+FINALIST ··· National Technology Olympiad — Wireless Communication Technologies
+PRIZE ······ Bolshie Vyzovy (Sirius)
+PRIZE ······ HSE University Case Championship
+1ST ········ MPIT — regional stage
 ```
+
+> **Whoever creates always destroys.**
+> `— F. NIETZSCHE`
 
 ---
 
