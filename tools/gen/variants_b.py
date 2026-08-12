@@ -317,14 +317,16 @@ def boot(m):
 
     body.append(label(x0, 268, metrics_line(m), size=8.5, fill=DUST, spacing=0.22))
 
+    # Every element rests in its finished state and the animation only replays
+    # the typing, so a renderer without CSS animation still shows the full log.
     css = """
-    .ch { opacity: 0; animation: on 0.01s linear forwards; letter-spacing: 0; }
-    @keyframes on { to { opacity: 1 } }
+    .ch { opacity: 1; animation: on 0.01s linear both; letter-spacing: 0; }
+    @keyframes on { from { opacity: 0 } to { opacity: 1 } }
     .cur { animation: blink 1.1s steps(1) infinite; }
     @keyframes blink { 0%,49% { opacity: 1 } 50%,100% { opacity: 0 } }
-    .pb { animation: fill 0.1s linear forwards; }
-    @keyframes fill { to { opacity: 0.9 } }
-    .pct { animation: fill 0.2s linear forwards; }"""
+    .pb { opacity: 0.9; animation: fill 0.1s linear both; }
+    @keyframes fill { from { opacity: 0 } to { opacity: 0.9 } }
+    .pct { opacity: 1; animation: fill 0.2s linear both; }"""
     return wrap(W, H, "\n".join(body), css,
                 "the profile boot sequence typing itself out")
 

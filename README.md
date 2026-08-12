@@ -1,13 +1,6 @@
 <img alt="m1x — a Schwarzschild black hole, photon geodesics integrated per pixel" src="https://raw.githubusercontent.com/M1hairu/M1hairu/main/.assets/header.gif" width="100%">
 
-```console
-$ boot --profile M1HAIRU
-
-  [ok]  operator ....... M1HAIRU / M1X
-  [ok]  field .......... SYSTEMS · SIGNAL · VISUAL_INTERFACES
-  [ok]  base ........... INFORMATION_SECURITY / BSC
-  [··]  state .......... TRANSMITTING
-```
+<img alt="$ boot --profile M1HAIRU — operator M1HAIRU / M1X, field SYSTEMS · SIGNAL · VISUAL_INTERFACES, base INFORMATION_SECURITY / BSC, state TRANSMITTING" src="https://raw.githubusercontent.com/M1hairu/M1hairu/main/.assets/boot.svg" width="100%">
 
 I build systems that have to hold up twice — once as engineering, once as something
 you actually look at. Encrypted storage that survives losing nodes, receivers that pull
@@ -15,17 +8,7 @@ aircraft out of the air, and interfaces that behave like archives, not pages.
 
 ---
 
-### `~/ ls -1 ./signals`
-
-| INDEX | SIGNAL | TYPE | STATUS |
-|---|---|---|---|
-| `SIG-000` | [**M1X_WEB**](https://m1hai.ru) | WEB / VISUAL_SYSTEM | `LIVE / SELF_BUILT` |
-| `SIG-001` | **UPSTORAGE** | STORAGE / CRYPTO | `PRIVATE / ACTIVE` |
-| `SIG-002` | **LOCATOR** | SDR / AVIONICS | `PRIVATE / FIELD` |
-| `SIG-003` | **WATCH_FACES** | EMBEDDED / VISUAL | `PRIVATE / SHIPPED` |
-| `SIG-004` | **SKYJOURNAL** | ANDROID / OFFLINE | `PRIVATE / SHIPPED` |
-| `SIG-005` | **MOEX_AI_AGENT** | TRADING_AI / ASYNCIO | `ARCHIVED / HACKATHON` |
-| `SIG-006` | **TENDER_HACK** | SEARCH / AGGREGATION | `ARCHIVED / HACKATHON` |
+<img alt="signal index — SIG-000 M1X_WEB (live), SIG-001 UPSTORAGE, SIG-002 LOCATOR, SIG-003 WATCH_FACES, SIG-004 SKYJOURNAL, SIG-005 MOEX_AI_AGENT, SIG-006 TENDER_HACK" src="https://raw.githubusercontent.com/M1hairu/M1hairu/main/.assets/signals.svg" width="100%">
 
 <details>
 <summary><code>~/ cat ./signals/*.dossier</code></summary>
@@ -89,8 +72,6 @@ usable product-search surface.
 </details>
 
 ---
-
-### `~/ scan ./contributions`
 
 <img alt="contribution waterfall — a scan beam sweeping 53 weeks of signal" src="https://raw.githubusercontent.com/M1hairu/M1hairu/main/.assets/heatmap.svg" width="100%">
 

@@ -290,7 +290,7 @@ def oscilloscope(m):
 
     css = BLINK_CSS + f"""
     .trace {{
-      stroke-dasharray: 1000; stroke-dashoffset: 1000;
+      stroke-dasharray: 1000; stroke-dashoffset: 0;
       animation: draw {dur}s linear infinite;
     }}
     @keyframes draw {{
@@ -335,7 +335,7 @@ def crt(m):
 
     css = BLINK_CSS + f"""
     .row {{
-      transform-origin: {GX}px 0; opacity: 0;
+      transform-origin: {GX}px 0; opacity: 1;
       animation: rowin {dur}s ease-out infinite;
     }}
     @keyframes rowin {{

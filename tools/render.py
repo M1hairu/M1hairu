@@ -17,6 +17,7 @@ sys.path.insert(0, os.path.join(HERE, "gen"))
 from common import load, save              # noqa: E402
 import variants_a                          # noqa: E402
 import variants_b                          # noqa: E402
+import variants_c                          # noqa: E402
 
 # variant name -> (builder, output filename)
 CATALOG = {
@@ -30,6 +31,7 @@ CATALOG = {
     "glitch":       (variants_b.glitch,       "heatmap.svg"),
     "accretion":    (variants_b.accretion,    "heatmap.svg"),
     "boot":         (variants_b.boot,         "boot.svg"),
+    "signals":      (variants_c.signals,      "signals.svg"),
 }
 
 

@@ -159,9 +159,16 @@ def metrics_line(m):
     )
 
 
+# Killing the animation is not enough: anything that animates *into* view starts
+# at opacity 0, so without a resting state a reduced-motion reader gets a blank
+# panel. Each element that types or fades in is pinned to its finished state;
+# .col is the flare overlay and correctly stays hidden over the static grid.
 REDUCED = """
     @media (prefers-reduced-motion: reduce) {
       * { animation: none !important; }
+      .row, .ch, .pb, .pct, .cur { opacity: 1 !important; }
+      .trace { stroke-dashoffset: 0 !important; }
+      .flash, .col { opacity: 0 !important; }
     }"""
 
 
