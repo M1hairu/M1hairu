@@ -77,11 +77,6 @@ usable product-search surface.
 
 ---
 
-> **Whoever creates always destroys.**
-> `— F. NIETZSCHE`
-
----
-
 <img alt="ping ./out — reply from m1hai.ru (live), t.me/thesupremecommander (open), mihail.antsev@gmail.com (open), 0% packet loss" src="https://raw.githubusercontent.com/M1hairu/M1hairu/main/.assets/ping.svg" width="100%">
 
-[`m1hai.ru`](https://m1hai.ru) · [`telegram`](https://t.me/thesupremecommander) · `mihail.antsev@gmail.com`
+> **↓**&nbsp;&nbsp; [`m1hai.ru`](https://m1hai.ru) &nbsp;·&nbsp; [`telegram`](https://t.me/thesupremecommander) &nbsp;·&nbsp; `mihail.antsev@gmail.com`

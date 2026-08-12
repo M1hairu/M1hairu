@@ -28,7 +28,10 @@ COLS = (56, 168, 372, 700)                    # index, signal, type, status
 def signals(m=None):
     row_h = 24
     top = 78
-    H = top + len(SIGNALS) * row_h + 56
+    # No footer line: the <details> block right below the image is the real
+    # affordance and carries its own disclosure triangle — repeating its label
+    # inside the picture just read as a second, dead copy of it.
+    H = top + len(SIGNALS) * row_h + 22
 
     live = sum(1 for s in SIGNALS if s[4] == "live")
     body = [
@@ -66,24 +69,11 @@ def signals(m=None):
                        f'stroke="{LINE}"/>')
         body.append(f'<g class="row" style="animation-delay:{delay:.2f}s">{"".join(row)}</g>')
 
-    # footer: cursor + hint that the dossiers sit in the collapsed block below
-    fy = H - 26
-    body.append(f'<line x1="{PAD}" y1="{fy - 20}" x2="{W - PAD}" y2="{fy - 20}" '
-                f'stroke="{LINE}"/>')
-    body.append(f'<rect x="{PAD}" y="{fy - 9}" width="6" height="10" fill="{SIGNAL}" '
-                f'class="blink"/>')
-    body.append(label(PAD + 14, fy, "cat ./signals/*.dossier", size=9.5, fill=ASH,
-                      spacing=0.16))
-    body.append(label(W - PAD, fy, "EXPAND BELOW ↓", size=8.5, fill=DUST, spacing=0.24,
-                      anchor="end"))
-
     # Resting state is visible and the animation only replays the reveal, so a
     # renderer that ignores CSS animation still shows the full listing.
     css = """
     .row { opacity: 1; animation: in .3s ease-out both; }
     @keyframes in { from { opacity: 0 } to { opacity: 1 } }
-    .blink { animation: blink 1.1s steps(1) infinite; }
-    @keyframes blink { 0%,49% { opacity: 1 } 50%,100% { opacity: 0 } }
     .lamp { animation: pulse 2.4s ease-in-out infinite; }
     @keyframes pulse { 0%,100% { opacity: .35 } 50% { opacity: 1 } }"""
 
