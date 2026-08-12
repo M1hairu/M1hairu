@@ -10,8 +10,8 @@ $ boot --profile M1HAIRU
 ```
 
 I build systems that have to hold up twice — once as engineering, once as something
-you actually look at. Trading loops that stay honest under risk gates, search layers
-over sources that fight back, and interfaces that behave like archives, not pages.
+you actually look at. Encrypted storage that survives losing nodes, receivers that pull
+aircraft out of the air, and interfaces that behave like archives, not pages.
 
 ---
 
@@ -20,8 +20,12 @@ over sources that fight back, and interfaces that behave like archives, not page
 | INDEX | SIGNAL | TYPE | STATUS |
 |---|---|---|---|
 | `SIG-000` | [**M1X_WEB**](https://m1hai.ru) | WEB / VISUAL_SYSTEM | `LIVE / SELF_BUILT` |
-| `SIG-001` | **MOEX_AI_AGENT** | TRADING_AI / ASYNCIO | `ARCHIVED / HACKATHON` |
-| `SIG-002` | **TENDER_HACK** | SEARCH / AGGREGATION | `ARCHIVED / HACKATHON` |
+| `SIG-001` | **UPSTORAGE** | STORAGE / CRYPTO | `PRIVATE / ACTIVE` |
+| `SIG-002` | **LOCATOR** | SDR / AVIONICS | `PRIVATE / FIELD` |
+| `SIG-003` | **WATCH_FACES** | EMBEDDED / VISUAL | `PRIVATE / SHIPPED` |
+| `SIG-004` | **SKYJOURNAL** | ANDROID / OFFLINE | `PRIVATE / SHIPPED` |
+| `SIG-005` | **MOEX_AI_AGENT** | TRADING_AI / ASYNCIO | `ARCHIVED / HACKATHON` |
+| `SIG-006` | **TENDER_HACK** | SEARCH / AGGREGATION | `ARCHIVED / HACKATHON` |
 
 <details>
 <summary><code>~/ cat ./signals/*.dossier</code></summary>
@@ -37,13 +41,46 @@ rendered monochrome + Bayer dither at low internal resolution for the halftone l
 Falls back to a Canvas 2D particle field and respects `prefers-reduced-motion`.
 `NEXT.JS 15` `REACT 19` `TYPESCRIPT` `WEBGL` `FRAMER_MOTION` `NGINX`
 
-**`SIG-001` — MOEX_AI_AGENT**
+**`SIG-001` — UPSTORAGE**
+Decentralised encrypted file storage. The client cuts a file into segments, encrypts them
+under its own key and spreads Reed-Solomon shards across keeper nodes. A keeper only ever
+holds opaque blocks addressed by their own hash — it can read neither the data nor the
+file names. RS(10,4) costs 140% overhead instead of replication's 500% at the same
+tolerance; content addressing buys dedup, integrity checks and repair without keys;
+rendezvous hashing means a departing node moves only 1/N of the shards. One Rust core
+serves desktop and mobile over FFI instead of duplicating the logic.
+`RUST` `FLUTTER` `REED-SOLOMON` `BLAKE3` `FFI`
+
+**`SIG-002` — LOCATOR**
+Portable ADS-B receiver for general-aviation pilots: 1090 MHz off an RTL-SDR Blog V4,
+decoding the traffic around your own aircraft. Prototype runs on a laptop with a web UI;
+the product moves to Raspberry Pi with e-ink and GPS as a standalone panel. The V4 ships
+an R828D tuner, so it needs the rtlsdrblog fork of librtlsdr — the stock distro driver
+tunes silently and wrong.
+`RTL-SDR` `ADS-B` `PYTHON` `RASPBERRY_PI` `E-INK`
+
+**`SIG-003` — WATCH_FACES**
+Nine Connect IQ watch faces for Garmin epix Pro (Gen 2) in the same dither / pixel-dark
+language that holds up m1hai.ru. The AMOLED panel takes 65k colours, so 1-bit dithering
+here is a style decision, not a constraint — what actually constrains is memory: a
+full-screen frame costs 25 KB at two levels and 201 KB at full scale, against a 128 KB
+budget for the entire face.
+`MONKEY_C` `CONNECT_IQ` `BAYER_DITHER` `AMOLED`
+
+**`SIG-004` — SKYJOURNAL**
+Offline flight log for an amphibian-aircraft pilot. A panel floats above the navigation
+map, so marking a take-off or a landing is one tap without leaving navigation, stamped in
+both UTC and local time — the evening logbook stops being an exercise in memory. No
+network path at all: installed from a signed APK, never checks for updates.
+`KOTLIN` `JETPACK_COMPOSE` `ANDROID` `OFFLINE_FIRST`
+
+**`SIG-005` — MOEX_AI_AGENT**
 Autonomous MOEX trading prototype: a long-only momentum core with risk gates,
 persistent state, audit logs and LLM-assisted market-regime checks — the model acts as
 an extra signal, not as blind automation.
 `PYTHON` `ASYNCIO` `TRADING` `RISK` `LLM`
 
-**`SIG-002` — TENDER_HACK**
+**`SIG-006` — TENDER_HACK**
 Search layer for fragmented marketplaces: queries WB, Ozon, Yandex Market and open-web
 sources through SearXNG, then groups, filters and ranks noisy results into a single
 usable product-search surface.
@@ -53,14 +90,20 @@ usable product-search surface.
 
 ---
 
+### `~/ scan ./contributions`
+
+<img alt="contribution waterfall — a scan beam sweeping 53 weeks of signal" src="https://raw.githubusercontent.com/M1hairu/M1hairu/main/.assets/heatmap.svg" width="100%">
+
+---
+
 ### `~/ tree ./stack`
 
 ```
 .
-├── LOW ········ C · LINUX_KERNEL · V4L2 · DKMS · ACPI · EMBEDDED
-├── CORE ······· PYTHON · TYPESCRIPT · JAVASCRIPT · SQL
-├── SURFACE ···· NEXT.JS · REACT · TAILWIND · WEBGL · CANVAS · FRAMER_MOTION
-├── FIELD ······ RTL-SDR · ARDUINO · RASPBERRY_PI · 3D_PRINTING · BLENDER
+├── LOW ········ C · RUST · MONKEY_C · LINUX_KERNEL · V4L2 · DKMS · ACPI
+├── CORE ······· PYTHON · TYPESCRIPT · KOTLIN · SQL
+├── SURFACE ···· NEXT.JS · REACT · TAILWIND · WEBGL · COMPOSE · FLUTTER
+├── FIELD ······ RTL-SDR · ADS-B · RASPBERRY_PI · E-INK · ARDUINO · 3D_PRINTING
 └── HOST ······· ARCH · HYPRLAND · NGINX · SYSTEMD · DOCKER
 ```
 

@@ -1,0 +1,57 @@
+name: signal
+
+# Re-renders the profile SVGs from live contribution data once a day, so the
+# numbers baked into the image never drift from the graph above it.
+
+on:
+  schedule:
+    - cron: "17 3 * * *"      # 03:17 UTC daily
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "tools/**"
+      - ".github/workflows/signal.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: signal
+  cancel-in-progress: true
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch contributions
+        env:
+          # A PAT (read:user) reports private contributions too; the fallback
+          # repo token only sees public activity.
+          GH_TOKEN: ${{ secrets.GH_PAT || github.token }}
+          GH_LOGIN: ${{ github.repository_owner }}
+        run: python tools/fetch_contributions.py
+
+      - name: Render SVG
+        env:
+          CONTRIB_JSON: ${{ github.workspace }}/contrib.json
+          SVG_OUT: ${{ github.workspace }}/.assets
+        run: python tools/render.py ${{ vars.SIGNAL_VARIANTS || 'waterfall' }}
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .assets
+          if git diff --staged --quiet; then
+            echo "no change"
+          else
+            git commit -m "signal: refresh from $(date -u +%Y-%m-%d)"
+            git push
+          fi
