@@ -30,21 +30,35 @@ jobs:
         with:
           python-version: "3.12"
 
+      # The calendar only reports private contributions to a user PAT. With the
+      # repo token it would return public activity only (~10 instead of 320) and
+      # quietly overwrite a correct image with a wrong one — so skip instead.
+      - name: Check credentials
+        id: cred
+        run: |
+          if [ -n "${{ secrets.GH_PAT }}" ]; then
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::GH_PAT secret is missing — skipping the re-render so the committed heatmap keeps its private-contribution numbers"
+          fi
+
       - name: Fetch contributions
+        if: steps.cred.outputs.ok == 'true'
         env:
-          # A PAT (read:user) reports private contributions too; the fallback
-          # repo token only sees public activity.
-          GH_TOKEN: ${{ secrets.GH_PAT || github.token }}
+          GH_TOKEN: ${{ secrets.GH_PAT }}
           GH_LOGIN: ${{ github.repository_owner }}
         run: python tools/fetch_contributions.py
 
       - name: Render SVG
+        if: steps.cred.outputs.ok == 'true'
         env:
           CONTRIB_JSON: ${{ github.workspace }}/contrib.json
           SVG_OUT: ${{ github.workspace }}/.assets
         run: python tools/render.py ${{ vars.SIGNAL_VARIANTS || 'waterfall' }}
 
       - name: Commit if changed
+        if: steps.cred.outputs.ok == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
