@@ -47,7 +47,7 @@ jobs:
           SVG_OUT: ${{ github.workspace }}/.assets
         # boot.svg carries the contribution count too, so it re-renders with
         # the heatmap; signals.svg is static but stays in one command.
-        run: python tools/render.py ${{ vars.SIGNAL_VARIANTS || 'waterfall boot signals' }}
+        run: python tools/render.py ${{ vars.SIGNAL_VARIANTS || 'waterfall boot signals ping' }}
 
       - name: Commit if changed
         run: |

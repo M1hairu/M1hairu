@@ -77,35 +77,11 @@ usable product-search surface.
 
 ---
 
-### `~/ tree ./stack`
-
-```
-.
-├── LOW ········ C · RUST · MONKEY_C · LINUX_KERNEL · V4L2 · DKMS · ACPI
-├── CORE ······· PYTHON · TYPESCRIPT · KOTLIN · SQL
-├── SURFACE ···· NEXT.JS · REACT · TAILWIND · WEBGL · COMPOSE · FLUTTER
-├── FIELD ······ RTL-SDR · ADS-B · RASPBERRY_PI · E-INK · ARDUINO · 3D_PRINTING
-└── HOST ······· ARCH · HYPRLAND · NGINX · SYSTEMD · DOCKER
-```
-
-### `~/ cat ./record`
-
-```
-FINALIST ··· National Technology Olympiad — Wireless Communication Technologies
-PRIZE ······ Bolshie Vyzovy (Sirius)
-PRIZE ······ HSE University Case Championship
-1ST ········ MPIT — regional stage
-```
-
 > **Whoever creates always destroys.**
 > `— F. NIETZSCHE`
 
 ---
 
-### `~/ ping ./out`
+<img alt="ping ./out — reply from m1hai.ru (live), t.me/thesupremecommander (open), mihail.antsev@gmail.com (open), 0% packet loss" src="https://raw.githubusercontent.com/M1hairu/M1hairu/main/.assets/ping.svg" width="100%">
 
 [`m1hai.ru`](https://m1hai.ru) · [`telegram`](https://t.me/thesupremecommander) · `mihail.antsev@gmail.com`
-
-```
-[ SIGNAL REMAINS UNSTABLE ]
-```

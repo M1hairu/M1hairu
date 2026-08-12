@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="266"
+     viewBox="0 0 920 266" role="img" aria-label="contact panel — three channels answering a ping">
+  <title>contact panel — three channels answering a ping</title>
+  <desc></desc>
+  <defs>
+  <pattern id="halftone" width="4" height="4" patternUnits="userSpaceOnUse">
+    <circle cx="2" cy="2" r="0.6" fill="#f5f5f5" opacity="0.18"/>
+  </pattern>
+  <pattern id="scanlines" width="3" height="3" patternUnits="userSpaceOnUse">
+    <rect width="3" height="1.5" y="1.5" fill="#000000" opacity="0.5"/>
+  </pattern>
+  <style>
+    text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace; }
+
+    .row { opacity: 1; animation: land 5.10s ease-out infinite; }
+    @keyframes land {
+      0%   { opacity: 0 }
+      4%   { opacity: 1 }
+      96%  { opacity: 1 }
+      100% { opacity: 0 }
+    }
+    .arc { opacity: 0; animation: ripple 5.10s ease-out infinite; }
+    @keyframes ripple {
+      0%   { opacity: 0 }
+      3%   { opacity: .8 }
+      14%  { opacity: 0 }
+      100% { opacity: 0 }
+    }
+    .blink { animation: blink 1.1s steps(1) infinite; }
+    @keyframes blink { 0%,49% { opacity: 1 } 50%,100% { opacity: 0 } }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; }
+      .row, .ch, .pb, .pct, .cur { opacity: 1 !important; }
+      .trace { stroke-dashoffset: 0 !important; }
+      .flash, .col { opacity: 0 !important; }
+    }
+  </style>
+  </defs>
+  <rect width="920" height="266" fill="#000000"/>
+<text x="38" y="32" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="11" fill="#f5f5f5" letter-spacing="0.16em" text-anchor="start" font-weight="400" opacity="1.0">~/ ping ./out</text>
+<text x="882" y="32" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="8.5" fill="#555555" letter-spacing="0.2em" text-anchor="end" font-weight="400" opacity="1.0">3 CHANNELS · 0% LOSS</text>
+<line x1="38" y1="44" x2="882" y2="44" stroke="#1a1a1a"/>
+<text x="38" y="68" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="9.5" fill="#9a9a9a" letter-spacing="0.14em" text-anchor="start" font-weight="400" opacity="1.0">PING ./out — 3 channels, 56 data bytes</text>
+<g class="row" style="animation-delay:0.30s"><text x="38" y="106" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="10" fill="#555555" letter-spacing="0.12em" text-anchor="start" font-weight="400" opacity="1.0">reply from</text><text x="130" y="106" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="11.5" fill="#f5f5f5" letter-spacing="0.14em" text-anchor="start" font-weight="400" opacity="1.0">m1hai.ru</text><text x="560" y="106" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="9.5" fill="#555555" letter-spacing="0.14em" text-anchor="start" font-weight="400" opacity="1.0">seq=1</text><text x="648" y="106" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="9.5" fill="#9a9a9a" letter-spacing="0.14em" text-anchor="start" font-weight="400" opacity="1.0">state=LIVE</text><path d="M836 95 A 7 7 0 0 1 836 109" fill="none" stroke="#f5f5f5" stroke-width="1.1" opacity="0.55" class="arc" style="animation-delay:0.30s"/><path d="M836 90 A 12 12 0 0 1 836 114" fill="none" stroke="#f5f5f5" stroke-width="1.1" opacity="0.42" class="arc" style="animation-delay:0.42s"/><path d="M836 85 A 17 17 0 0 1 836 119" fill="none" stroke="#f5f5f5" stroke-width="1.1" opacity="0.29" class="arc" style="animation-delay:0.54s"/><circle cx="834" cy="102" r="2.4" fill="#f5f5f5"/></g>
+<g class="row" style="animation-delay:1.15s"><text x="38" y="132" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="10" fill="#555555" letter-spacing="0.12em" text-anchor="start" font-weight="400" opacity="1.0">reply from</text><text x="130" y="132" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="11.5" fill="#f5f5f5" letter-spacing="0.14em" text-anchor="start" font-weight="400" opacity="1.0">t.me/thesupremecommander</text><text x="560" y="132" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="9.5" fill="#555555" letter-spacing="0.14em" text-anchor="start" font-weight="400" opacity="1.0">seq=2</text><text x="648" y="132" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="9.5" fill="#9a9a9a" letter-spacing="0.14em" text-anchor="start" font-weight="400" opacity="1.0">state=OPEN</text><path d="M836 121 A 7 7 0 0 1 836 135" fill="none" stroke="#f5f5f5" stroke-width="1.1" opacity="0.55" class="arc" style="animation-delay:1.15s"/><path d="M836 116 A 12 12 0 0 1 836 140" fill="none" stroke="#f5f5f5" stroke-width="1.1" opacity="0.42" class="arc" style="animation-delay:1.27s"/><path d="M836 111 A 17 17 0 0 1 836 145" fill="none" stroke="#f5f5f5" stroke-width="1.1" opacity="0.29" class="arc" style="animation-delay:1.39s"/><circle cx="834" cy="128" r="2.4" fill="#f5f5f5"/></g>
+<g class="row" style="animation-delay:2.00s"><text x="38" y="158" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="10" fill="#555555" letter-spacing="0.12em" text-anchor="start" font-weight="400" opacity="1.0">reply from</text><text x="130" y="158" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="11.5" fill="#f5f5f5" letter-spacing="0.14em" text-anchor="start" font-weight="400" opacity="1.0">mihail.antsev@gmail.com</text><text x="560" y="158" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="9.5" fill="#555555" letter-spacing="0.14em" text-anchor="start" font-weight="400" opacity="1.0">seq=3</text><text x="648" y="158" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="9.5" fill="#9a9a9a" letter-spacing="0.14em" text-anchor="start" font-weight="400" opacity="1.0">state=OPEN</text><path d="M836 147 A 7 7 0 0 1 836 161" fill="none" stroke="#f5f5f5" stroke-width="1.1" opacity="0.55" class="arc" style="animation-delay:2.00s"/><path d="M836 142 A 12 12 0 0 1 836 166" fill="none" stroke="#f5f5f5" stroke-width="1.1" opacity="0.42" class="arc" style="animation-delay:2.12s"/><path d="M836 137 A 17 17 0 0 1 836 171" fill="none" stroke="#f5f5f5" stroke-width="1.1" opacity="0.29" class="arc" style="animation-delay:2.24s"/><circle cx="834" cy="154" r="2.4" fill="#f5f5f5"/></g>
+<line x1="38" y1="180" x2="882" y2="180" stroke="#1a1a1a"/>
+<g class="row" style="animation-delay:2.85s"><text x="38" y="200" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="9.5" fill="#555555" letter-spacing="0.14em" text-anchor="start" font-weight="400" opacity="1.0">--- ./out ping statistics ---</text><text x="38" y="222" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="10" fill="#9a9a9a" letter-spacing="0.14em" text-anchor="start" font-weight="400" opacity="1.0">3 packets transmitted, 3 received, 0% packet loss</text></g>
+<rect x="38" y="242" width="6" height="11" fill="#f5f5f5" class="blink"/>
+<text x="52" y="252" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" fill="#f5f5f5" letter-spacing="0.24em" text-anchor="start" font-weight="400" opacity="1.0">[ SIGNAL REMAINS UNSTABLE ]</text>
+  <rect width="920" height="266" fill="url(#scanlines)" opacity="0.35" pointer-events="none"/>
+</svg>
